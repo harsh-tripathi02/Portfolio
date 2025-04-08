@@ -1,7 +1,7 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { useToast } from '../hooks/use-toast';
 import { Mail, Phone, Linkedin, Github } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -24,26 +24,48 @@ const ContactSection: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const serviceId = "service_xujmrfg";
+  const templateId = "template_pur5148";
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    // Disable button and show spinner
     setIsSending(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-        variant: "default",
-      });
-      
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-      
+
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      alert('Please fill in all required fields');
       setIsSending(false);
-    }, 1500);
+      return;
+    }
+
+    // Send email
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        {
+          name: formData.name, // Use "name" instead of "fullname"
+          email: formData.email,
+          message: formData.message,
+        },
+        'ui5xvLF67WEK0wUiL' // Replace with your EmailJS user ID
+      )
+      .then(() => {
+        alert('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+      })
+      .catch((error) => {
+        alert(`Error sending message: ${error.text}`);
+      })
+      .finally(() => {
+        setIsSending(false);
+      });
   };
 
   const handleScroll = () => {

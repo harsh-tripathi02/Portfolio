@@ -13,28 +13,28 @@ const projects: Project[] = [
   {
     title: 'Journee - Travel Booking App',
     description: 'MERN stack travel booking application with user authentication, dynamic search, and payment integration. Tested by 250+ users with 20% faster search.',
-    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=500&auto=format&fit=crop',
+    image: './images/travelApp.webp',
     tags: ['MongoDB', 'Express', 'React', 'Node.js', 'API Integration'],
     url: 'https://github.com/Aryankesharwani04/Journee'
   },
   {
     title: 'Snapster - Social Media App',
     description: 'Secure, scalable social media backend with real-time notifications using MongoDB and Node.js. Boosted engagement by 60% with 95% user satisfaction.',
-    image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=500&auto=format&fit=crop',
+    image: './images/socialMedia.webp',
     tags: ['Node.js', 'MongoDB', 'Real-time', 'Authentication', 'Socket.io'],
     url: 'https://github.com/harsh-tripathi02/Snapster'
   },
   {
     title: 'Kubernetes Microservices',
     description: 'Microservices architecture using Kubernetes and Docker with Ingress configuration, autoscaling, and CI/CD pipelines for containerized services.',
-    image: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=500&auto=format&fit=crop',
+    image: './images/k8s.webp',
     tags: ['Kubernetes', 'Docker', 'Microservices', 'CI/CD', 'DevOps'],
     url: 'https://github.com/harsh-tripathi02/K8s-Project-ECOM'
   },
   {
     title: 'Dockerized Flask Application',
     description: 'Python-based web application using Flask with Redis for visitor tracking. Containerized with Docker and orchestrated using Docker Compose.',
-    image: 'https://images.unsplash.com/photo-1605745341152-7d6923b07522?q=80&w=500&auto=format&fit=crop',
+    image: './images/docker.webp',
     tags: ['Docker', 'Flask', 'Redis', 'Python', 'Docker Compose'],
     url: 'https://github.com/harsh-tripathi02/Docker-Python-Project'
   }
