@@ -1,6 +1,5 @@
 services:
   - type: web
-    runtime: node
     name: MyPortfolio
-    buildCommand: npm run build
-    startCommand: npm run dev
+    staticPublishPath: /dist
+    buildCommand: npm install && npm run build
